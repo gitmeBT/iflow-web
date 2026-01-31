@@ -3,228 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iFlow CLI - 智能命令行助手</title>
+    <title>SpaceX & xAI IPO 大事件 - 完整时间线</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">iFlow</span>
+    <div class="background-animation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="title">
+                <span class="highlight">SpaceX</span> & <span class="highlight-accent">xAI</span>
+            </h1>
+            <p class="subtitle">2025-2026 IPO 重大事件时间线</p>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-number">$1.5T</span>
+                    <span class="stat-label">预计估值</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$250亿+</span>
+                    <span class="stat-label">融资目标</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2026 H1</span>
+                    <span class="stat-label">预计上市</span>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#features">功能特性</a></li>
-                <li><a href="#how-it-works">工作原理</a></li>
-                <li><a href="#demo">演示</a></li>
-            </ul>
         </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="tab active" data-tab="timeline">时间线</button>
+        <button class="tab" data-tab="companies">公司介绍</button>
+        <button class="tab" data-tab="analysis">深度分析</button>
     </nav>
 
-    <!-- 英雄区域 -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="gradient-text">iFlow CLI</span>
-                <br>心流 · 智能命令行助手
-            </h1>
-            <p class="hero-subtitle">
-                基于先进 AI 技术，让软件开发更高效、更智能、更流畅
-            </p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('features')">探索功能</button>
-                <button class="btn btn-secondary" onclick="scrollToSection('demo')">查看演示</button>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="terminal-dot red"></span>
-                    <span class="terminal-dot yellow"></span>
-                    <span class="terminal-dot green"></span>
-                    <span class="terminal-title">iFlow CLI</span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="command">iflow 帮我优化这个函数</span>
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">✓</span> 正在分析代码...
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">✓</span> 发现 3 个优化点
-                    </div>
-                    <div class="terminal-line output">
-                        <span class="success">✓</span> 已应用优化建议
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">$</span>
-                        <span class="cursor">▋</span>
+    <main class="container">
+        <!-- 时间线部分 -->
+        <section id="timeline" class="tab-content active">
+            <h2 class="section-title">📅 关键事件时间线</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025年3月</div>
+                        <h3>⚡ xAI 收购 X (Twitter)</h3>
+                        <p class="timeline-amount">💰 交易金额: $330亿</p>
+                        <p>xAI 以 330亿美元收购 X (原 Twitter)，马斯克私人投资者成功解套（从 $440亿跌至 $90亿）</p>
+                        <span class="tag tag-accent">内部交易</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 功能特性 -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">核心功能</h2>
-            <p class="section-subtitle">强大的 AI 能力，助力开发全流程</p>
-            
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">🤖</div>
-                    <h3>智能代码理解</h3>
-                    <p>深度理解代码上下文，准确识别项目结构和依赖关系，提供精准的代码分析</p>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025年12月9日</div>
+                        <h3>🚀 SpaceX 启动 IPO 计划</h3>
+                        <p class="timeline-amount">💰 融资目标: $250亿+</p>
+                        <p>路透社报道：SpaceX 寻求 2026年IPO，目标估值超过 $1万亿，预计融资 250-300亿美元</p>
+                        <span class="tag tag-primary">IPO</span>
+                    </div>
                 </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">🔧</div>
-                    <h3>自动化任务处理</h3>
-                    <p>自动执行复杂的多步骤任务，从代码重构到项目部署，一键完成</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">🎯</div>
-                    <h3>精准 bug 修复</h3>
-                    <p>智能定位问题根源，提供可执行的修复方案，确保代码质量</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon">📚</div>
-                    <h3>项目探索分析</h3>
-                    <p>快速理解陌生项目结构，生成清晰的项目文档和架构说明</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon">🌐</div>
-                    <h3>多语言支持</h3>
-                    <p>支持 Python、JavaScript、TypeScript、Go 等多种编程语言</p>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-icon">⚡</div>
-                    <h3>高效工作流</h3>
-                    <p>智能任务管理，自动跟踪进度，让开发流程更加顺畅高效</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 工作原理 -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">工作原理</h2>
-            <p class="section-subtitle">简单三步，开启智能开发</p>
-            
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>描述需求</h3>
-                        <p>用自然语言描述你的开发任务或问题</p>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025年12月</div>
+                        <h3>🤝 Tesla 投资 xAI</h3>
+                        <p class="timeline-amount">💰 投资金额: $20亿</p>
+                        <p>Tesla 向 xAI 投资 20亿美元，使用公开股东资金支持马斯克的私人 AI 公司</p>
+                        <span class="tag tag-warning">关联交易</span>
                     </div>
                 </div>
-                
-                <div class="step-arrow">→</div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>AI 分析</h3>
-                        <p>iFlow 智能分析代码库，理解上下文</p>
-                    </div>
-                </div>
-                
-                <div class="step-arrow">→</div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>自动执行</h3>
-                        <p>自动完成任务，并提供详细反馈</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 演示区域 -->
-    <section id="demo" class="demo">
-        <div class="container">
-            <h2 class="section-title">使用示例</h2>
-            <p class="section-subtitle">常见场景，一键解决</p>
-            
-            <div class="demo-tabs">
-                <button class="tab-btn active" data-tab="code-review">代码审查</button>
-                <button class="tab-btn" data-tab="bug-fix">Bug 修复</button>
-                <button class="tab-btn" data-tab="refactor">代码重构</button>
-            </div>
-            
-            <div class="demo-content">
-                <div class="demo-pane active" id="code-review">
-                    <div class="demo-command">
-                        <span class="prompt">$</span>
-                        iflow 审查 src/ 目录下的所有代码
+                <div class="timeline-item" data-year="2026">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026年1月22日</div>
+                        <h3>📈 Tesla 向 xAI 出售电池</h3>
+                        <p class="timeline-amount">💰 交易金额: $4.3亿</p>
+                        <p>Tesla 2025年向 xAI 出售 4.3亿美元 Megapack 储能电池</p>
+                        <span class="tag tag-info">商业往来</span>
                     </div>
-                    <div class="demo-result">
-                        <p><span class="success">✓</span> 正在扫描 src/ 目录...</p>
-                        <p><span class="success">✓</span> 发现 15 个文件，共 3,247 行代码</p>
-                        <p><span class="success">✓</span> 代码审查完成：</p>
+                </div>
+
+                <div class="timeline-item featured" data-year="2026">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026年1月29日</div>
+                        <h3>🔥 合并谈判曝光</h3>
+                        <p class="timeline-amount">💰 估值: $1.5万亿</p>
+                        <p>路透社独家：SpaceX 与 xAI 合并谈判，xAI 股份可兑换 SpaceX 股票。SpaceX IPO 可能成为史上最大规模</p>
+                        <span class="tag tag-danger">重大突破</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2026">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026年1月底</div>
+                        <h3>🔮 三方合并可能性</h3>
+                        <p class="timeline-amount">📋 多种方案</p>
+                        <p>彭博社：SpaceX 考虑与 Tesla 或 xAI 合并。马斯克可能主导"自己与自己的谈判"</p>
+                        <span class="tag tag-secondary">待定</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司介绍部分 -->
+        <section id="companies" class="tab-content">
+            <h2 class="section-title">🏢 参演公司介绍</h2>
+            
+            <div class="companies-grid">
+                <div class="company-card">
+                    <div class="company-icon spacex">🚀</div>
+                    <h3>SpaceX</h3>
+                    <div class="company-info">
+                        <p><strong>估值:</strong> $1.5万亿+</p>
+                        <p><strong>主营业务:</strong> 火箭发射、Starlink 星链</p>
+                        <p><strong>预计 IPO:</strong> 2026年6-7月</p>
+                        <p><strong>马斯克持股:</strong> ~42%</p>
+                    </div>
+                    <div class="company-desc">
+                        全球最大私营航天公司，计划进行史上最大规模 IPO
+                    </div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-icon xai">🤖</div>
+                    <h3>xAI</h3>
+                    <div class="company-info">
+                        <p><strong>估值:</strong> $500亿+</p>
+                        <p><strong>主营业务:</strong> AI 大模型、Grok</p>
+                        <p><strong>成立时间:</strong> 2023年</p>
+                        <p><strong>马斯克持股:</strong> ~50%+</p>
+                    </div>
+                    <div class="company-desc">
+                        马斯克的 AI 公司，2025年收购 X，现与 SpaceX 谈合并
+                    </div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-icon tesla">🚗</div>
+                    <h3>Tesla</h3>
+                    <div class="company-info">
+                        <p><strong>市值:</strong> ~$1万亿</p>
+                        <p><strong>主营业务:</strong> 电动车、储能、AI</p>
+                        <p><strong>角色:</strong> 可能的合并对象</p>
+                        <p><strong>马斯克持股:</strong> ~13%</p>
+                    </div>
+                    <div class="company-desc">
+                        公开上市公司，投资者担心在合并中处于不利地位
+                    </div>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-icon x">🐦</div>
+                    <h3>X (Twitter)</h3>
+                    <div class="company-info">
+                        <p><strong>收购价:</strong> $330亿</p>
+                        <p><strong>收购方:</strong> xAI</p>
+                        <p><strong>原估值:</strong> $440亿</p>
+                        <p><strong>当前估值:</strong> ~$90亿(私有化前)</p>
+                    </div>
+                    <div class="company-desc">
+                        2025年被 xAI 收购，马斯克私人投资者成功解套
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 深度分析部分 -->
+        <section id="analysis" class="tab-content">
+            <h2 class="section-title">🔍 深度分析</h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3>⚠️ 关联交易争议</h3>
+                    <div class="analysis-content">
+                        <p><strong>核心问题：</strong></p>
                         <ul>
-                            <li>3 处潜在的性能问题</li>
-                            <li>5 处代码风格不一致</li>
-                            <li>2 处安全风险建议</li>
+                            <li>马斯克同时主导多方谈判</li>
+                            <li>私人公司持股比例高于上市公司</li>
+                            <li>可能存在利益冲突</li>
+                        </ul>
+                        <p><strong>历史模式：</strong></p>
+                        <ul>
+                            <li>2016年 Tesla 收购 SolarCity</li>
+                            <li>2023年收购 Twitter ($440亿)</li>
+                            <li>2025年 xAI 收购 X ($330亿)</li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="demo-pane" id="bug-fix">
-                    <div class="demo-command">
-                        <span class="prompt">$</span>
-                        iflow 修复登录页面的错误
-                    </div>
-                    <div class="demo-result">
-                        <p><span class="success">✓</span> 正在分析登录页面代码...</p>
-                        <p><span class="success">✓</span> 检测到问题：表单验证逻辑错误</p>
-                        <p><span class="success">✓</span> 已修复验证逻辑</p>
-                        <p><span class="success">✓</span> 添加了单元测试覆盖</p>
-                    </div>
-                </div>
-                
-                <div class="demo-pane" id="refactor">
-                    <div class="demo-command">
-                        <span class="prompt">$</span>
-                        iflow 重构用户管理模块，使用更好的设计模式
-                    </div>
-                    <div class="demo-result">
-                        <p><span class="success">✓</span> 分析用户管理模块结构...</p>
-                        <p><span class="success">✓</span> 应用工厂模式重构</p>
-                        <p><span class="success">✓</span> 提取公共接口</p>
-                        <p><span class="success">✓</span> 更新相关测试用例</p>
-                        <p><span class="success">✓</span> 重构完成，代码可维护性提升 40%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-icon">⚡</span>
-                    <span class="logo-text">iFlow CLI</span>
+                <div class="analysis-card">
+                    <h3>💰 资金流向分析</h3>
+                    <div class="analysis-content">
+                        <div class="flow-diagram">
+                            <div class="flow-item">
+                                <span class="from">Twitter 投资者</span>
+                                <span class="arrow">→</span>
+                                <span class="to">xAI 收购 X</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="from">Tesla 股东</span>
+                                <span class="arrow">→</span>
+                                <span class="to">投资 xAI $20亿</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="from">Tesla 股东</span>
+                                <span class="arrow">→</span>
+                                <span class="to">出售电池 $4.3亿</span>
+                            </div>
+                            <div class="flow-item">
+                                <span class="from">xAI 股东</span>
+                                <span class="arrow">→</span>
+                                <span class="to">SpaceX 合并</span>
+                            </div>
+                        </div>
+                        <p class="analysis-note">⚡ 所有资金最终流向马斯克的私人帝国</p>
+                    </div>
                 </div>
-                <p class="footer-tagline">让 AI 赋能每一位开发者</p>
-                <p class="footer-copyright">© 2026 iFlow. All rights reserved.</p>
+
+                <div class="analysis-card">
+                    <h3>📊 IPO 规模对比</h3>
+                    <div class="analysis-content">
+                        <table class="comparison-table">
+                            <tr>
+                                <th>项目</th>
+                                <th>SpaceX 2026</th>
+                                <th>历史记录</th>
+                            </tr>
+                            <tr>
+                                <td>预计估值</td>
+                                <td>$1.5万亿</td>
+                                <td>-$1.1万亿(阿里)</td>
+                            </tr>
+                            <tr>
+                                <td>融资规模</td>
+                                <td>$250-500亿</td>
+                                <td>$250亿(阿里)</td>
+                            </tr>
+                            <tr>
+                                <td>上市时间</td>
+                                <td>2026 H2</td>
+                                <td>2014年</td>
+                            </tr>
+                            <tr>
+                                <td>将成为</td>
+                                <td>史上最大</td>
+                                <td>史上最大</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>🎯 可能的结局</h3>
+                    <div class="analysis-content">
+                        <div class="scenarios">
+                            <div class="scenario">
+                                <span class="scenario-title">方案 A:</span>
+                                <span class="scenario-desc">SpaceX 与 xAI 合并 → 共同上市</span>
+                                <span class="probability">概率: 高</span>
+                            </div>
+                            <div class="scenario">
+                                <span class="scenario-title">方案 B:</span>
+                                <span class="scenario-desc">SpaceX 单独 IPO，xAI 保持独立</span>
+                                <span class="probability">概率: 中</span>
+                            </div>
+                            <div class="scenario">
+                                <span class="scenario-title">方案 C:</span>
+                                <span class="scenario-desc">SpaceX + Tesla + xAI 超级合并</span>
+                                <span class="probability">概率: 低</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="warning-box">
+                <h3>⚠️ 投资者警示</h3>
+                <p>据 Electrek 分析：</p>
+                <ul>
+                    <li>Tesla 股东可能在合并中处于不利地位</li>
+                    <li>马斯克在私人公司持股比例远高于上市公司</li>
+                    <li>关联交易诉讼正在进行中</li>
+                    <li>合并条款由马斯克"与自己谈判"确定</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>📅 最后更新: 2026年1月31日 | 数据来源: Reuters, Bloomberg, Electrek, Yahoo Finance</p>
+        <p class="disclaimer">⚠️ 本页面仅供信息参考，不构成投资建议</p>
     </footer>
 
     <script src="script.js"></script>

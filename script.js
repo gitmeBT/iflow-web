@@ -1,107 +1,90 @@
-// 平滑滚动到指定区域
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// 演示选项卡切换
+// Tab Navigation
 document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const demoPanes = document.querySelectorAll('.demo-pane');
-    
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // 移除所有激活状态
-            tabBtns.forEach(b => b.classList.remove('active'));
-            demoPanes.forEach(p => p.classList.remove('active'));
-            
-            // 激活当前选项卡
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-tab');
+
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
+
+            // Update active content
+            contents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetId) {
+                    content.classList.add('active');
+                }
+            });
         });
     });
-    
-    // 滚动动画
+
+    // Add scroll animation for timeline items
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('aos-animate');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateX(0)';
             }
         });
     }, observerOptions);
-    
-    // 观察所有带 data-aos 属性的元素
-    const aosElements = document.querySelectorAll('[data-aos]');
-    aosElements.forEach(el => observer.observe(el));
-    
-    // 导航栏滚动效果
-    let lastScroll = 0;
-    const navbar = document.querySelector('.navbar');
-    
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+    });
+
+    // Add smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add hover effect for stat cards
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.querySelector('.stat-number').style.transform = 'scale(1.1)';
+            this.querySelector('.stat-number').style.transition = 'transform 0.3s ease';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.querySelector('.stat-number').style.transform = 'scale(1)';
+        });
+    });
+
+    // Add click animation for tags
+    document.querySelectorAll('.tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+    });
+
+    // Parallax effect for hero section
     window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    // 终端打字效果
-    const terminalLines = document.querySelectorAll('.terminal-line .command');
-    terminalLines.forEach((line, index) => {
-        const text = line.textContent;
-        line.textContent = '';
-        let charIndex = 0;
-        
-        setTimeout(() => {
-            const typeInterval = setInterval(() => {
-                if (charIndex < text.length) {
-                    line.textContent += text[charIndex];
-                    charIndex++;
-                } else {
-                    clearInterval(typeInterval);
-                }
-            }, 50);
-        }, index * 2000);
-    });
-});
-
-// 平滑滚动导航链接
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
     });
-});
 
-// 按钮悬停效果增强
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        this.style.setProperty('--mouse-x', `${x}px`);
-        this.style.setProperty('--mouse-y', `${y}px`);
-    });
+    console.log('🚀 SpaceX & xAI IPO Timeline loaded successfully!');
+    console.log('📅 Last updated: January 31, 2026');
 });
