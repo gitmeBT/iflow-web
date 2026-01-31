@@ -490,30 +490,100 @@ body {
     font-size: 0.9rem;
 }
 
-/* Comparison Table */
+/* Comparison Cards - Mobile Friendly */
 .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
+    display: none;
 }
 
-.comparison-table th,
-.comparison-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+.comparison-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.comparison-table th {
-    color: var(--accent-color);
+.comparison-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-card-header {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
     font-weight: 600;
+    font-size: 0.85rem;
 }
 
-.comparison-table td {
+.comparison-card-header span {
+    text-align: center;
+}
+
+.comparison-card-header span:first-child {
+    text-align: left;
+    color: var(--accent-color);
+}
+
+.comparison-card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.comparison-card-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-card-row span {
+    text-align: center;
     color: var(--text-secondary);
 }
 
-.comparison-table tr:hover td {
+.comparison-card-row span:first-child {
+    text-align: left;
     color: var(--text-primary);
+    font-weight: 500;
+}
+
+.comparison-card-row:hover span {
+    color: var(--text-primary);
+}
+
+@media (min-width: 769px) {
+    .comparison-table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .comparison-table th {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+    
+    .comparison-table td {
+        color: var(--text-secondary);
+    }
+    
+    .comparison-table tr:hover td {
+        color: var(--text-primary);
+    }
+    
+    .comparison-cards {
+        display: none;
+    }
 }
 
 /* Scenarios */
