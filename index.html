@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFlow CLI - 智能命令行助手</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">iFlow</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">功能特性</a></li>
+                <li><a href="#how-it-works">工作原理</a></li>
+                <li><a href="#demo">演示</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">iFlow CLI</span>
+                <br>心流 · 智能命令行助手
+            </h1>
+            <p class="hero-subtitle">
+                基于先进 AI 技术，让软件开发更高效、更智能、更流畅
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('features')">探索功能</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('demo')">查看演示</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">iFlow CLI</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="command">iflow 帮我优化这个函数</span>
+                    </div>
+                    <div class="terminal-line output">
+                        <span class="success">✓</span> 正在分析代码...
+                    </div>
+                    <div class="terminal-line output">
+                        <span class="success">✓</span> 发现 3 个优化点
+                    </div>
+                    <div class="terminal-line output">
+                        <span class="success">✓</span> 已应用优化建议
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">$</span>
+                        <span class="cursor">▋</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <p class="section-subtitle">强大的 AI 能力，助力开发全流程</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🤖</div>
+                    <h3>智能代码理解</h3>
+                    <p>深度理解代码上下文，准确识别项目结构和依赖关系，提供精准的代码分析</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🔧</div>
+                    <h3>自动化任务处理</h3>
+                    <p>自动执行复杂的多步骤任务，从代码重构到项目部署，一键完成</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🎯</div>
+                    <h3>精准 bug 修复</h3>
+                    <p>智能定位问题根源，提供可执行的修复方案，确保代码质量</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">📚</div>
+                    <h3>项目探索分析</h3>
+                    <p>快速理解陌生项目结构，生成清晰的项目文档和架构说明</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">🌐</div>
+                    <h3>多语言支持</h3>
+                    <p>支持 Python、JavaScript、TypeScript、Go 等多种编程语言</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">⚡</div>
+                    <h3>高效工作流</h3>
+                    <p>智能任务管理，自动跟踪进度，让开发流程更加顺畅高效</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作原理 -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">工作原理</h2>
+            <p class="section-subtitle">简单三步，开启智能开发</p>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>描述需求</h3>
+                        <p>用自然语言描述你的开发任务或问题</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI 分析</h3>
+                        <p>iFlow 智能分析代码库，理解上下文</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>自动执行</h3>
+                        <p>自动完成任务，并提供详细反馈</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 演示区域 -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">使用示例</h2>
+            <p class="section-subtitle">常见场景，一键解决</p>
+            
+            <div class="demo-tabs">
+                <button class="tab-btn active" data-tab="code-review">代码审查</button>
+                <button class="tab-btn" data-tab="bug-fix">Bug 修复</button>
+                <button class="tab-btn" data-tab="refactor">代码重构</button>
+            </div>
+            
+            <div class="demo-content">
+                <div class="demo-pane active" id="code-review">
+                    <div class="demo-command">
+                        <span class="prompt">$</span>
+                        iflow 审查 src/ 目录下的所有代码
+                    </div>
+                    <div class="demo-result">
+                        <p><span class="success">✓</span> 正在扫描 src/ 目录...</p>
+                        <p><span class="success">✓</span> 发现 15 个文件，共 3,247 行代码</p>
+                        <p><span class="success">✓</span> 代码审查完成：</p>
+                        <ul>
+                            <li>3 处潜在的性能问题</li>
+                            <li>5 处代码风格不一致</li>
+                            <li>2 处安全风险建议</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="demo-pane" id="bug-fix">
+                    <div class="demo-command">
+                        <span class="prompt">$</span>
+                        iflow 修复登录页面的错误
+                    </div>
+                    <div class="demo-result">
+                        <p><span class="success">✓</span> 正在分析登录页面代码...</p>
+                        <p><span class="success">✓</span> 检测到问题：表单验证逻辑错误</p>
+                        <p><span class="success">✓</span> 已修复验证逻辑</p>
+                        <p><span class="success">✓</span> 添加了单元测试覆盖</p>
+                    </div>
+                </div>
+                
+                <div class="demo-pane" id="refactor">
+                    <div class="demo-command">
+                        <span class="prompt">$</span>
+                        iflow 重构用户管理模块，使用更好的设计模式
+                    </div>
+                    <div class="demo-result">
+                        <p><span class="success">✓</span> 分析用户管理模块结构...</p>
+                        <p><span class="success">✓</span> 应用工厂模式重构</p>
+                        <p><span class="success">✓</span> 提取公共接口</p>
+                        <p><span class="success">✓</span> 更新相关测试用例</p>
+                        <p><span class="success">✓</span> 重构完成，代码可维护性提升 40%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">iFlow CLI</span>
+                </div>
+                <p class="footer-tagline">让 AI 赋能每一位开发者</p>
+                <p class="footer-copyright">© 2026 iFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
