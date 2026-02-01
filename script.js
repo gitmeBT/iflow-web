@@ -1,90 +1,96 @@
-// Tab Navigation
+// iFlow Capital Analysis - Navigation & Interactions
+
 document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
+    // Smooth scroll navigation
+    initNavigation();
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-tab');
+    // Add subtle hover effects
+    initHoverEffects();
 
-            // Update active tab
-            tabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
+    console.log('iFlow Capital Analysis loaded');
+});
 
-            // Update active content
-            contents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === targetId) {
-                    content.classList.add('active');
+function initNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', updateActiveNav);
+}
+
+function updateActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const scrollPosition = window.pageYOffset + 100;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
                 }
             });
-        });
+        }
     });
+}
 
-    // Add scroll animation for timeline items
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
+function initHoverEffects() {
+    // Timeline items
+    document.querySelectorAll('.timeline-event').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const marker = this.querySelector('.event-marker');
+            if (marker) {
+                marker.style.transform = 'scale(1.2)';
             }
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        observer.observe(item);
-    });
-
-    // Add smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        item.addEventListener('mouseleave', function() {
+            const marker = this.querySelector('.event-marker');
+            if (marker) {
+                marker.style.transform = 'scale(1)';
             }
         });
     });
 
-    // Add hover effect for stat cards
-    document.querySelectorAll('.stat-card').forEach(card => {
+    // Analysis cards
+    document.querySelectorAll('.analysis-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.querySelector('.stat-number').style.transform = 'scale(1.1)';
-            this.querySelector('.stat-number').style.transition = 'transform 0.3s ease';
+            this.style.transform = 'translateY(-2px)';
         });
 
         card.addEventListener('mouseleave', function() {
-            this.querySelector('.stat-number').style.transform = 'scale(1)';
+            this.style.transform = 'translateY(0)';
         });
     });
 
-    // Add click animation for tags
-    document.querySelectorAll('.tag').forEach(tag => {
-        tag.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 100);
+    // Data tables rows
+    document.querySelectorAll('.full-table tbody tr').forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transition = 'background-color 0.2s ease';
         });
     });
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
-
-    console.log('🚀 SpaceX & xAI IPO Timeline loaded successfully!');
-    console.log('📅 Last updated: January 31, 2026');
-});
+}
