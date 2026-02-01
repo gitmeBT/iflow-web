@@ -357,7 +357,7 @@ img {
 
 .timeline-image {
     width: 100%;
-    height: 200px;
+    height: 220px;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 16px;
@@ -376,7 +376,7 @@ img {
 
 .timeline-image.small {
     width: 200px;
-    height: 120px;
+    height: 140px;
     float: right;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -431,6 +431,23 @@ img {
 .analysis-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
+}
+
+.card-visual {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.analysis-card:hover .card-visual img {
+    transform: scale(1.05);
 }
 
 .card-header {
@@ -760,12 +777,13 @@ img {
 }
 
 .strategy-card {
-    padding: 32px 24px;
+    padding: 24px;
     background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 20px;
     text-align: center;
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .strategy-card:hover {
@@ -773,10 +791,29 @@ img {
     box-shadow: var(--shadow-xl);
 }
 
+.strategy-card-image {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.strategy-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.strategy-card:hover .strategy-card-image img {
+    transform: scale(1.05);
+}
+
 .strategy-icon {
     display: inline-block;
-    font-size: 40px;
-    margin-bottom: 16px;
+    font-size: 36px;
+    margin-bottom: 12px;
 }
 
 .strategy-card h4 {
@@ -787,9 +824,24 @@ img {
 }
 
 .strategy-card p {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--color-text-light);
     line-height: 1.5;
+}
+
+/* Visual Divider */
+.visual-divider {
+    width: 100%;
+    height: 300px;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 48px;
+}
+
+.visual-divider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Strategy Analysis */
@@ -945,6 +997,68 @@ img {
     margin: 0;
 }
 
+/* Data Visual Grid */
+.data-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 48px;
+}
+
+.data-card-visual {
+    position: relative;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.data-card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.data-card-visual:hover img {
+    transform: scale(1.05);
+}
+
+.data-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.data-card-overlay h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.data-card-overlay p {
+    font-size: 14px;
+    color: var(--color-accent-light);
+    margin: 0;
+}
+
+.data-card-visual.highlight .data-card-overlay {
+    background: linear-gradient(to top, rgba(99, 102, 241, 0.8), transparent);
+}
+
+.data-card-visual.highlight .data-card-overlay h4 {
+    color: #fff;
+}
+
+.data-card-visual.highlight .data-card-overlay p {
+    color: #fff;
+}
+
 /* Data Section */
 .data-table-container {
     max-width: 1000px;
@@ -1057,14 +1171,36 @@ img {
 
 /* Conclusion */
 .conclusion {
-    background: linear-gradient(135deg, var(--color-bg-dark) 0%, #1a1a2e 100%);
+    position: relative;
+    padding: 0;
     max-width: none;
-    padding: 100px 40px;
+    overflow: hidden;
+}
+
+.conclusion-visual {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.conclusion-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conclusion-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.95);
 }
 
 .conclusion-content {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 100px 40px;
 }
 
 .conclusion-content h2 {
@@ -1167,6 +1303,10 @@ img {
     .timeline-compact {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .data-visual-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1247,6 +1387,15 @@ img {
     .goal-step {
         width: 100%;
     }
+
+    .data-visual-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .data-card-visual {
+        height: 150px;
+    }
 }
 
 /* Animations */
@@ -1279,6 +1428,7 @@ img {
 .analysis-card,
 .strategy-card,
 .compact-item,
-.history-item {
+.history-item,
+.data-card-visual {
     animation: fadeInUp 0.5s ease-out forwards;
 }
